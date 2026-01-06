@@ -1,0 +1,25 @@
+@'
+# Dependency directories
+node_modules/
+.venv/
+__pycache__/
+
+# Environment / config
+.env
+*.pem
+*.key
+*.crt
+
+# Logs & cache
+*.log
+logs/
+.cache/
+
+# Build / dist
+dist/
+build/
+
+# IDE/editor configs
+.vscode/
+.idea/
+'@ > .gitignore

@@ -1,0 +1,40 @@
+{
+  "name": "playwright__practise",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "run:tests": "ts-node executor.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.52.0",
+    "@types/fs-extra": "^11.0.4",
+    "@types/inquirer": "^9.0.8",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^22.14.0",
+    "allure-commandline": "^2.34.0",
+    "allure-playwright": "^3.2.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^9.9.0",
+    "axios": "^1.9.0",
+    "csv-parse": "^5.6.0",
+    "csv-parser": "^3.2.0",
+    "csv-stringify": "^6.5.2",
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0",
+    "fs-extra": "^11.3.0",
+    "inquirer": "^12.6.3",
+    "jsdom": "^26.1.0",
+    "otpauth": "^9.4.0",
+    "papaparse": "^5.5.3",
+    "playwright": "^1.52.0",
+    "xlsx": "^0.18.5"
+  }
+}
