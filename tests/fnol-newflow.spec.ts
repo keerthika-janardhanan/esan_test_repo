@@ -14,7 +14,7 @@ test.beforeAll(() => {
   try {
     const testManagerPath = path.join(__dirname, '../testmanager.xlsx');
     if (fs.existsSync(testManagerPath)) {
-      executionList = getTestToRun(testManagerPath);
+      executionList = getTestToRun(testManagerPath);wzs
       console.log('[DEBUG] TestManager loaded successfully, entries:', executionList.length);
       console.log('[DEBUG] TestManager data:', JSON.stringify(executionList, null, 2));
     } else {
