@@ -15,7 +15,7 @@ const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
  */
 export default defineConfig({
   timeout: 180000,
-  expect: { timeout: 180000 }, // <-- add this
+  expect: { timeout: 40*1000 }, // <-- add this
   testDir: './tests',
   outputDir: `test-results/${process.env.REFERENCE_ID || 'default'}`,
   /* Run tests in files in parallel */
@@ -47,8 +47,8 @@ export default defineConfig({
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'retain-on-failure',
     screenshot: 'only-on-failure',
-    navigationTimeout: 180000,
-    actionTimeout: 180000
+    navigationTimeout: 40*1000,
+    actionTimeout: 40*1000
   },
 
   /* Configure projects for major browsers */
