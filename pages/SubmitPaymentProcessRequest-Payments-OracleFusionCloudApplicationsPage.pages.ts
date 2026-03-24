@@ -1,0 +1,88 @@
+import { Page, Locator } from '@playwright/test';
+import HelperClass from '../util/methods.utility.ts';
+import locators from '../locators/PaymentsOracleFusionCloudApplicationsPage';
+
+class PaymentsOracleFusionCloudApplicationsPage {
+  page: Page;
+  helper: HelperClass;
+  step10Element: Locator;
+  submitPaymentProcessRequestButton: Locator;
+  usernameInput: Locator;
+  passwordButton: Locator;
+  passwordButtonSpan: Locator;
+  passwordInput: Locator;
+  nextButton: Locator;
+  nameInput: Locator;
+  nameButton: Locator;
+  templateInput: Locator;
+  ukSupplierPaymentButton: Locator;
+  supplierOrPartyInput: Locator;
+  submitButton: Locator;
+  searchButton: Locator;
+
+  constructor(page: Page) {
+    this.page = page;
+    this.helper = new HelperClass(page);
+    this.step10Element = page.locator(locators.step10Element).first();
+    this.submitPaymentProcessRequestButton = page.locator(locators.submitPaymentProcessRequestButton).first();
+    this.usernameInput = page.locator(locators.usernameInput).first();
+    this.passwordButton = page.locator(locators.passwordButton).first();
+    this.passwordButtonSpan = page.locator(locators.passwordButtonSpan).first();
+    this.passwordInput = page.locator(locators.passwordInput).first();
+    this.nextButton = page.locator(locators.nextButton).first();
+    this.nameInput = page.locator(locators.nameInput).first();
+    this.nameButton = page.locator(locators.nameButton).first();
+    this.templateInput = page.locator(locators.templateInput).first();
+    this.ukSupplierPaymentButton = page.locator(locators.ukSupplierPaymentButton).first();
+    this.supplierOrPartyInput = page.locator(locators.supplierOrPartyInput).first();
+    this.submitButton = page.locator(locators.submitButton).first();
+    this.searchButton = page.locator(locators.searchButton).first();
+  }
+
+  private coerceValue(value: unknown): string {
+    if (value === undefined || value === null) return '';
+    if (typeof value === 'number') return `${value}`;
+    if (typeof value === 'string') return value;
+    return `${value ?? ''}`;
+  }
+
+  private normaliseDataKey(value: string): string {
+    return (value || '').replace(/[^a-z0-9]+/gi, '').toLowerCase();
+  }
+
+  private resolveDataValue(formData: Record<string, any> | null | undefined, key: string, fallback: string = ''): string {
+    const target = this.normaliseDataKey(key);
+    if (formData) {
+      for (const entryKey of Object.keys(formData)) {
+        if (this.normaliseDataKey(entryKey) === target) {
+          const candidate = this.coerceValue(formData[entryKey]);
+          if (candidate.trim() !== '') return candidate;
+        }
+      }
+    }
+    return this.coerceValue(fallback);
+  }
+
+  async applyData(formData: Record<string, any> | null | undefined, keys?: string[], index: number = 0): Promise<void> {
+    const fallbackValues: Record<string, string> = {};
+    const targetKeys = Array.isArray(keys) && keys.length ? keys.map((k) => this.normaliseDataKey(k)) : null;
+    const shouldHandle = (key: string) => !targetKeys || targetKeys.includes(this.normaliseDataKey(key));
+  }
+
+  async setNameInput(value: unknown): Promise<void> {
+    const finalValue = this.coerceValue(value);
+    await this.nameInput.fill(finalValue);
+  }
+
+  async setTemplateInput(value: unknown): Promise<void> {
+    const finalValue = this.coerceValue(value);
+    await this.templateInput.fill(finalValue);
+  }
+
+  async setSupplierOrPartyInput(value: unknown): Promise<void> {
+    const finalValue = this.coerceValue(value);
+    await this.supplierOrPartyInput.fill(finalValue);
+  }
+}
+
+export default PaymentsOracleFusionCloudApplicationsPage;

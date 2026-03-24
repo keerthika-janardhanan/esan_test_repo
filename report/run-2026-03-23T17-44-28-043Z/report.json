@@ -1,0 +1,133 @@
+{
+  "config": {
+    "configFile": "C:\\Users\\2261383\\OneDrive - Cognizant\\Desktop\\Tasks\\ESAN\\ESAN_TestScriptGenerator\\framework_repos\\3e323f59eb46\\playwright.config.ts",
+    "rootDir": "C:/Users/2261383/OneDrive - Cognizant/Desktop/Tasks/ESAN/ESAN_TestScriptGenerator/framework_repos/3e323f59eb46/tests",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "html",
+        {
+          "outputFolder": "report\\run-2026-03-23T17-44-28-043Z",
+          "open": "never"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "report\\run-2026-03-23T17-44-28-043Z\\report.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "C:/Users/2261383/OneDrive - Cognizant/Desktop/Tasks/ESAN/ESAN_TestScriptGenerator/framework_repos/3e323f59eb46/test-results/default",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "C:/Users/2261383/OneDrive - Cognizant/Desktop/Tasks/ESAN/ESAN_TestScriptGenerator/framework_repos/3e323f59eb46/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 180000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.56.1",
+    "workers": 6,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "tmpyh_f_ovv.spec.ts",
+      "file": "tmpyh_f_ovv.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Tc1001 Login",
+          "file": "tmpyh_f_ovv.spec.ts",
+          "line": 19,
+          "column": 6,
+          "specs": [
+            {
+              "title": "tc1001-login",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 180000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "location": {
+                        "file": "C:\\Users\\2261383\\OneDrive - Cognizant\\Desktop\\Tasks\\ESAN\\ESAN_TestScriptGenerator\\framework_repos\\3e323f59eb46\\tests\\tmpyh_f_ovv.spec.ts",
+                        "line": 26,
+                        "column": 40
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-23T17:44:28.488Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "86389445c3e5424e8aee-ff6ff71877b01eef6aa4",
+              "file": "tmpyh_f_ovv.spec.ts",
+              "line": 26,
+              "column": 40
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-03-23T17:44:28.053Z",
+    "duration": 437.78499999999985,
+    "expected": 0,
+    "skipped": 1,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}
